@@ -4,13 +4,16 @@ import java.awt.event.ActionListener;
 
 public class JframeCalculator {
 
-    
+    private double totale1 = 0.0;
+    private double totale2 = 0.0;
+
+    private char math_operator;
 
     private JPanel JCalculator;
     private JTextField TextDisplay;
     private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton BTNDivide;
+    private JButton BTNPlus;
     private JButton BTN1;
     private JButton BTN2;
     private JButton BTN4;
@@ -20,14 +23,21 @@ public class JframeCalculator {
     private JButton BTN5;
     private JButton BTN8;
     private JButton BTNPoint;
-    private JButton BTNPlus;
+    private JButton BTNRemove;
     private JButton BTN6;
     private JButton BTN9;
     private JButton BTNClear;
     private JButton BTNEquals;
     private JButton BTNMinus;
     private JButton BTNMultiply;
-    private JButton BTNDivide;
+    private JButton Button;
+
+
+    public void getOperator(String BtnText){
+        math_operator = BtnText.charAt(0);
+        totale1 = totale1 + Double.parseDouble(TextDisplay.getText());
+        TextDisplay.setText("");
+    }
 
     public JframeCalculator() {
         BTN1.addActionListener(new ActionListener() {
@@ -103,8 +113,75 @@ public class JframeCalculator {
         BTNPoint.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String BTNPointText = TextDisplay.getText() + BTNPoint.getText();
-                TextDisplay.setText(BTNPointText);
+               if (TextDisplay.getText().equals("")){
+                   TextDisplay.setText("0.");
+               }
+               else if (TextDisplay.getText().contains(".")){
+                   BTNPoint.setEnabled(false);
+               }
+               else {
+                   String BTNPointText= TextDisplay.getText() + BTNPoint.getText();
+                   TextDisplay.setText(BTNPointText);
+               }
+               BTNPoint.setEnabled(true);
+            }
+        });
+        BTNPlus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String Button_text = BTNPlus.getText();
+                getOperator(Button_text);
+            }
+        });
+        BTNEquals.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                switch (math_operator){
+                    case '+':
+                        totale2 = totale1 + Double.parseDouble(TextDisplay.getText());
+                        break;
+                    case '-':
+                        totale2 = totale1 - Double.parseDouble(TextDisplay.getText());
+                        break;
+                    case '/':
+                        totale2 = totale1 / Double.parseDouble(TextDisplay.getText());
+                        break;
+                    case '*':
+                        totale2 = totale1 * Double.parseDouble(TextDisplay.getText());
+                        break;
+
+                }
+                TextDisplay.setText(Double.toString(totale2));
+                totale1=0;
+
+            }
+        });
+        BTNClear.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                totale2 = 0 ;
+                TextDisplay.setText("");
+            }
+        });
+        BTNDivide.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String Button_text = BTNDivide.getText();
+                getOperator(Button_text);
+            }
+        });
+        BTNMinus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String Button_text = BTNMinus.getText();
+                getOperator(Button_text);
+            }
+        });
+        BTNMultiply.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String Button_text = BTNMultiply.getText();
+                getOperator(Button_text);
             }
         });
     }
@@ -115,5 +192,6 @@ public class JframeCalculator {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
     }
 }

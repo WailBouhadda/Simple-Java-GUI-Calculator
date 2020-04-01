@@ -10,7 +10,7 @@
     <children>
       <component id="5e891" class="javax.swing.JTextField" binding="TextDisplay">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -99,15 +99,6 @@
           <text value="."/>
         </properties>
       </component>
-      <component id="3bfa3" class="javax.swing.JButton" binding="BTNPlus">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Arial Black" size="11" style="1"/>
-          <text value="+"/>
-        </properties>
-      </component>
       <component id="22705" class="javax.swing.JButton" binding="BTN6">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -135,31 +126,6 @@
           <text value="CL"/>
         </properties>
       </component>
-      <component id="4fe43" class="javax.swing.JButton" binding="BTNEquals">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Arial Black" size="11" style="1"/>
-          <text value="="/>
-        </properties>
-      </component>
-      <component id="f84de" class="javax.swing.JButton" binding="button3" default-binding="true">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Button"/>
-        </properties>
-      </component>
-      <component id="d1763" class="javax.swing.JButton" binding="button2" default-binding="true">
-        <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Button"/>
-        </properties>
-      </component>
       <component id="1c99b" class="javax.swing.JButton" binding="button1" default-binding="true">
         <constraints>
           <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -183,16 +149,52 @@
         </constraints>
         <properties>
           <font name="Arial Black" size="11" style="1"/>
-          <text value="x"/>
+          <text value="*"/>
         </properties>
       </component>
-      <component id="8908" class="javax.swing.JButton" binding="BTNDivide">
+      <component id="f84de" class="javax.swing.JButton" binding="BTNPlus">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Arial Black" size="11" style="1"/>
+          <text value="+"/>
+        </properties>
+      </component>
+      <component id="d1763" class="javax.swing.JButton" binding="BTNDivide">
         <constraints>
           <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Arial Black" size="11" style="1"/>
           <text value="/"/>
+        </properties>
+      </component>
+      <component id="8908" class="javax.swing.JButton" binding="Button">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Arial Black" size="11" style="1"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="3bfa3" class="javax.swing.JButton" binding="BTNRemove">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Arial Black" size="11" style="1"/>
+          <text value="&lt;-"/>
+        </properties>
+      </component>
+      <component id="4fe43" class="javax.swing.JButton" binding="BTNEquals">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Arial Black" size="11" style="1"/>
+          <text value="="/>
         </properties>
       </component>
     </children>
