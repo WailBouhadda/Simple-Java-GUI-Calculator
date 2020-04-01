@@ -11,7 +11,7 @@ public class JframeCalculator {
 
     private JPanel JCalculator;
     private JTextField TextDisplay;
-    private JButton button1;
+    private JButton BTNfac;
     private JButton BTNDivide;
     private JButton BTNPlus;
     private JButton BTN1;
@@ -30,7 +30,17 @@ public class JframeCalculator {
     private JButton BTNEquals;
     private JButton BTNMinus;
     private JButton BTNMultiply;
-    private JButton Button;
+    private JButton BTNtan;
+    private JButton BTNsin;
+    private JButton BTNcos;
+    private JButton BTNsqrt;
+    private JButton BTNpi;
+    private JButton BTNpui;
+    private JButton BTNabso;
+    private JButton BTNlog;
+    private JButton BTNcbr;
+    private JButton BTNpm;
+    private JButton BTNround;
 
 
     public void getOperator(String BtnText){
@@ -184,6 +194,117 @@ public class JframeCalculator {
                 getOperator(Button_text);
             }
         });
+        BTNRemove.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String BS = null;
+                if (TextDisplay.getText().length() > 0){
+                    StringBuilder strB = new StringBuilder(TextDisplay.getText());
+                    strB.deleteCharAt(TextDisplay.getText().length() - 1);
+                    BS = strB.toString();
+                    TextDisplay.setText(BS);
+                }
+            }
+        });
+        BTNsqrt.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double sqr = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                sqr = Math.sqrt(sqr);
+                TextDisplay.setText(String.valueOf(sqr));
+            }
+        });
+        BTNabso.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double abso = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                abso = Math.abs(abso);
+                TextDisplay.setText(String.valueOf(abso));
+            }
+        });
+        BTNsin.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double sn = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                sn = Math.sin(sn);
+                TextDisplay.setText(String.valueOf(sn));
+            }
+        });
+        BTNcos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double cs = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                cs = Math.cos(cs);
+                TextDisplay.setText(String.valueOf(cs));
+            }
+        });
+        BTNtan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double tn = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                tn = Math.tan(tn);
+                TextDisplay.setText(String.valueOf(tn));
+            }
+        });
+        BTNpm.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double pm = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                pm = -pm;
+                TextDisplay.setText(String.valueOf(pm));
+            }
+        });
+        BTNpi.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double pi;
+                pi = 3.141592653589793238;
+                TextDisplay.setText(String.valueOf(pi));
+            }
+        });
+        BTNcbr.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double cbr = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                cbr = Math.cbrt(cbr);
+                TextDisplay.setText(String.valueOf(cbr));
+            }
+        });
+        BTNlog.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double lg = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                lg = Math.log(lg);
+                TextDisplay.setText(String.valueOf(lg));
+            }
+        });
+        BTNround.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double ro = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                ro = Math.round(ro);
+                TextDisplay.setText(String.valueOf(ro));
+            }
+        });
+        BTNfac.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double fac = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                for (double i = (fac-1) ; i > 0 ;i--){
+
+                    fac = fac * i ;
+                }
+                TextDisplay.setText(String.valueOf(fac));
+            }
+        });
+        BTNpui.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                double p = Double.parseDouble(String.valueOf(TextDisplay.getText()));
+                p = Math.pow(p,p);
+                TextDisplay.setText(String.valueOf(p));
+            }
+        });
     }
 
     public static void main(String[] args) {
@@ -192,6 +313,9 @@ public class JframeCalculator {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+        frame.setResizable(true);
+        frame.setSize(500,400);
+
 
     }
 }
